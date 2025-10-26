@@ -1,0 +1,7 @@
+{
+  "/api/posts": "/posts",
+  "/api/posts/:id": "/posts/:id",
+  "/api/profile": "/profile",
+  "/api/followers": "/followers",
+  "/api/story": "/story"
+}

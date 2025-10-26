@@ -1,0 +1,186 @@
+/* Story Viewer Container */
+.story-viewer {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  z-index: 9999;
+}
+
+/* Story Container and Media */
+.story-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.story-media {
+  max-height: calc(100vh - 96px);
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Story Header */
+.story-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.story-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.username {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.story-time {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+/* Story Controls */
+.story-controls {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.control-btn:hover {
+  opacity: 1;
+}
+
+/* Story Navigation */
+.position-absolute[class*="start-0"],
+.position-absolute[class*="end-0"] {
+  z-index: 3;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.position-absolute[class*="start-0"]:hover {
+  background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
+}
+
+.position-absolute[class*="end-0"]:hover {
+  background: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
+}
+
+/* Story Indicators */
+.story-indicator {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 2px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.story-bar {
+  height: 100%;
+  background: white;
+  width: 0;
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+.story-bar.viewed {
+  width: 100%;
+}
+
+/* Close Button */
+.btn-close-white {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  opacity: 0.8;
+  z-index: 4;
+  transition: opacity 0.2s;
+}
+
+.btn-close-white:hover {
+  opacity: 1;
+}
+
+/* Loading Container */
+.loading-container {
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner-border {
+  width: 2rem;
+  height: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .story-media {
+    max-height: 100vh;
+    width: 100%;
+  }
+  
+  .story-header {
+    padding: 12px;
+  }
+  
+  .story-avatar {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.top-4 {
+  top: 1rem !important;
+}
+
+.end-4 {
+  right: 1rem !important;
+}
